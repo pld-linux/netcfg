@@ -7,7 +7,7 @@ Group: Applications/System
 Source: netcfg-%{PACKAGE_VERSION}.tar.gz
 Requires: pythonlib >= 1.20, python, tkinter, initscripts >= 3.24
 BuildArchitectures: noarch
-BuildRoot: /var/tmp/netcfg-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 A Red Hat Linux tool which provides a graphical user interface for
