@@ -20,7 +20,7 @@ setting up and configuring networking for your machine.
 %build
 unset DISPLAY || true
 export PYTHONPATH=%{_libdir}/rhs/python
-make
+%{__make}
 
 %install
 rm -rf $RPM_BUILD_ROOT
