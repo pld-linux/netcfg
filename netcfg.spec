@@ -6,6 +6,7 @@ Release:	2
 License:	GPL
 Group:		Applications/System
 Source0:	%{name}-%{version}.tar.gz
+# Source0-md5:	dd4ba06d9ee22ec0afbca7fd73823ca5
 Requires:	pythonlib >= 1.20, python, tkinter, initscripts >= 3.24
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
