@@ -5,8 +5,6 @@ Version:	2.20
 Release:	2
 License:	GPL
 Group:		Applications/System
-Group(de):	Applikationen/System
-Group(pl):	Aplikacje/System
 Source0:	%{name}-%{version}.tar.gz
 Requires:	pythonlib >= 1.20, python, tkinter, initscripts >= 3.24
 BuildArch:	noarch
