@@ -2,7 +2,7 @@ Summary:	A network configuration tool
 Summary(pl):	Narzêdzie do konfiguracji sieci
 Name:		netcfg
 Version:	2.20
-Release:	2
+Release:	3
 License:	GPL
 Group:		Applications/System
 Source0:	%{name}-%{version}.tar.gz
@@ -10,7 +10,7 @@ Source0:	%{name}-%{version}.tar.gz
 Requires:	initscripts >= 3.24
 Requires:	python
 Requires:	pythonlib >= 1.20
-Requires:	tkinter
+Requires:	python-tkinter
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
