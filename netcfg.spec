@@ -28,7 +28,7 @@ rm -rf $RPM_BUILD_ROOT
 unset DISPLAY || true
 export PYTHONPATH=%{_libdir}/rhs/python
 
-make install \
+%{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT \
 	INSTALLBIN="install -m755" INSTALLDATA="install -m644"
 
