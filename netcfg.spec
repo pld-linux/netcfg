@@ -1,12 +1,13 @@
-Summary: A network configuration tool.
-Name: netcfg
-Version: 2.20
-Release: 2
-Copyright: GPL
-Group: Applications/System
-Source: netcfg-%{PACKAGE_VERSION}.tar.gz
-Requires: pythonlib >= 1.20, python, tkinter, initscripts >= 3.24
-BuildArchitectures: noarch
+Summary:	A network configuration tool
+Name:		netcfg
+Version:	2.20
+Release:	2
+License:	GPL
+Group:		Utilities/System
+Group(pl):	Narzêdzia/System
+Source0:	netcfg-%{PACKAGE_VERSION}.tar.gz
+Requires:	pythonlib >= 1.20, python, tkinter, initscripts >= 3.24
+BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -18,32 +19,32 @@ setting up and configuring networking for your machine.
 
 %build
 unset DISPLAY || true
-export PYTHONPATH=/usr/lib/rhs/python
+export PYTHONPATH=%{_libdir}/rhs/python
 make
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
 unset DISPLAY || true
-export PYTHONPATH=/usr/lib/rhs/python
+export PYTHONPATH=%{_libdir}/rhs/python
 
-make	DESTDIR=$RPM_BUILD_ROOT \
-	INSTALLBIN="install -m755" INSTALLDATA="install -m644" \
-	install
+make install \
+	DESTDIR=$RPM_BUILD_ROOT \
+	INSTALLBIN="install -m755" INSTALLDATA="install -m644"
 
 ( cd $RPM_BUILD_ROOT
-  mkdir -p ./usr/share/icons
-  cp ./usr/lib/rhs/control-panel/netcfg.xpm ./usr/share/icons
+  install -d .%{_datadir}/icons
+  cp .%{_libdir}/rhs/control-panel/netcfg.xpm .%{_datadir}/icons
 )
 
 %clean
 rm -rf $RPM_BUILD_ROOT
 
 %files
-%defattr(-,root,root)
-/usr/bin/netcfg
-/usr/lib/rhs/netcfg
-/usr/lib/rhs/control-panel/netcfg.init
-/usr/lib/rhs/control-panel/netcfg.xpm
-/usr/share/icons/netcfg.xpm
-%attr(0600,root,root)	%config(missingok) /etc/X11/wmconfig/netcfg
+%defattr(644,root,root,755)
+%attr(755,root,root) %{_bindir}/netcfg
+%{_libdir}/rhs/netcfg
+%{_libdir}/rhs/control-panel/netcfg.init
+%{_libdir}/rhs/control-panel/netcfg.xpm
+%{_datadir}/icons/netcfg.xpm
+%attr(0600,root,root) %config(missingok) %{_sysconfdir}/X11/wmconfig/netcfg
