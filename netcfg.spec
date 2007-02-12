@@ -1,5 +1,5 @@
 Summary:	A network configuration tool
-Summary(pl):	Narzêdzie do konfiguracji sieci
+Summary(pl.UTF-8):   NarzÄ™dzie do konfiguracji sieci
 Name:		netcfg
 Version:	2.20
 Release:	3
@@ -18,8 +18,8 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 A Red Hat Linux tool which provides a graphical user interface for
 setting up and configuring networking for your machine.
 
-%description -l pl
-Narzêdzie Red Hata daj±ce graficzny interfejs u¿ytkownika do
+%description -l pl.UTF-8
+NarzÄ™dzie Red Hata dajÄ…ce graficzny interfejs uÅ¼ytkownika do
 ustawiania i konfigurowania sieci.
 
 %prep
