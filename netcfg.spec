@@ -1,5 +1,5 @@
 Summary:	A network configuration tool
-Summary(pl.UTF-8):   Narzędzie do konfiguracji sieci
+Summary(pl.UTF-8):	Narzędzie do konfiguracji sieci
 Name:		netcfg
 Version:	2.20
 Release:	3
